@@ -1,0 +1,23 @@
+specs = [
+  'IssueReportingTestSupport.podspec',
+  'IssueReporting.podspec',
+  'XCTestDynamicOverlay.podspec',
+]
+specs_repo = "onelightapps"
+specs_repo_sources = [
+  "git@github.com:OnelightApps/specs.git",
+  "https://github.com/CocoaPods/Specs"
+]
+
+platform :release do
+  specs.each do |spec|
+    pod_push(
+      path: spec,
+      repo: specs_repo,
+      sources: specs_repo_sources,
+      allow_warnings: true,
+      skip_import_validation: true,
+      skip_tests: true
+    )
+  end
+end
