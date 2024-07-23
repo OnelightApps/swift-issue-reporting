@@ -1,0 +1,28 @@
+{
+  "configurations": [
+    {
+      "type": "lldb",
+      "request": "launch",
+      "sourceLanguages": [
+        "swift"
+      ],
+      "args": [],
+      "cwd": "${workspaceFolder:swift-issue-reporting}",
+      "name": "Debug WasmTests",
+      "program": "${workspaceFolder:swift-issue-reporting}/.build/debug/WasmTests",
+      "preLaunchTask": "swift: Build Debug WasmTests"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "sourceLanguages": [
+        "swift"
+      ],
+      "args": [],
+      "cwd": "${workspaceFolder:swift-issue-reporting}",
+      "name": "Release WasmTests",
+      "program": "${workspaceFolder:swift-issue-reporting}/.build/release/WasmTests",
+      "preLaunchTask": "swift: Build Release WasmTests"
+    }
+  ]
+}
