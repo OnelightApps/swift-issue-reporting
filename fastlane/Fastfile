@@ -1,7 +1,7 @@
 specs = [
   'IssueReportingTestSupport.podspec',
   'IssueReporting.podspec',
-  'XCTestDynamicOverlay.podspec',
+  'XCTestDynamicOverlay.podspec'
 ]
 specs_repo = "onelightapps"
 specs_repo_sources = [
