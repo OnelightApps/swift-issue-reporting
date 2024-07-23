@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
     s.version  = '1.2.0'
     s.homepage = 'https://github.com/pointfreeco/swift-issue-reporting'
     s.source = {
-        :git => 'git@github.com:pointfreeco/swift-issue-reporting.git',
+        :git => 'git@github.com:OnelightApps/swift-issue-reporting.git',
         :tag => s.version.to_s
     }
 
