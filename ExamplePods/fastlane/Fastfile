@@ -1,0 +1,59 @@
+default_platform :ios
+
+ios_xcode_project="ExampleApp.xcodeproj"
+ios_xcode_workspace="ExampleApp.xcworkspace"
+ios_directory="./build"
+
+ios_app_name="ExampleApp"
+ios_scheme="ExampleApp"
+
+platform :ios do
+
+  private_lane :install_dependencies do
+    cocoapods()
+  end
+
+  private_lane :deploy do |options|
+    install_dependencies()
+    build_ios_app(
+      clean: true,
+      scheme: ios_scheme,
+      workspace: ios_xcode_workspace,
+      configuration: options[:configuration],
+      export_method: "ad-hoc",
+      output_directory: ios_directory
+    )
+
+    diawi(
+      token: ENV["DIAWI_TOKEN"]
+    )
+
+    post_notifications()
+  end
+
+  lane :release do
+    deploy(
+      configuration: "Release"
+    )
+  end
+
+  error do |lane, exception|
+    notification(message: "'#{lane}' lane failed")
+  end
+
+  private_lane :post_notifications do
+    uploaded_file_link = lane_context[SharedValues::UPLOADED_FILE_LINK_TO_DIAWI]
+    message = "*ExampleApp* successfully uploaded to diawi. Link: #{uploaded_file_link} 🚀"
+  
+    notification(
+      message: message
+    )
+
+    telegram(
+      text: message,
+      parse_mode: 'Markdown'
+    )
+
+  end
+
+end

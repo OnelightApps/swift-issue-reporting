@@ -1,0 +1,16 @@
+platform :ios, '15.0'
+use_frameworks!
+
+def core_pod
+  sdk_source = {
+    :path => "../"
+  }
+
+  pod 'IssueReportingTestSupport', sdk_source
+  pod 'IssueReporting', sdk_source
+  pod 'XCTestDynamicOverlay', sdk_source
+end
+
+target 'ExampleApp' do
+  core_pod
+end

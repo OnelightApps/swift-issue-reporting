@@ -1,0 +1,28 @@
+PODS:
+  - IssueReporting (1.2.0):
+    - IssueReportingTestSupport (~> 1.2.0)
+  - IssueReportingTestSupport (1.2.0)
+  - XCTestDynamicOverlay (1.2.0):
+    - IssueReporting (~> 1.2.0)
+
+DEPENDENCIES:
+  - IssueReporting (from `../`)
+  - IssueReportingTestSupport (from `../`)
+  - XCTestDynamicOverlay (from `../`)
+
+EXTERNAL SOURCES:
+  IssueReporting:
+    :path: "../"
+  IssueReportingTestSupport:
+    :path: "../"
+  XCTestDynamicOverlay:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  IssueReporting: 47313dd9d8dd5fee9932689edfcc410070db7a22
+  IssueReportingTestSupport: e8612d1961d96f1371594cf1ed24b7b3c533b4cc
+  XCTestDynamicOverlay: 89efae16c3119dbf2313ed247abf3bee85cef09e
+
+PODFILE CHECKSUM: cc2095b35c0a3a455d55ecc3bc05a4bf66f2e94b
+
+COCOAPODS: 1.15.2
